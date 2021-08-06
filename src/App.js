@@ -25,6 +25,9 @@ function App() {
         reminder: true,
     },
 ] );
+const addTask = (task)=>{
+  console.log(task)
+}
 const deleteTask = (id)=>{
   setTasks(tasks.filter((task)=>task.id !== id))
 }
@@ -34,7 +37,7 @@ const toggleReminder = (id)=>{
   return (
     <div className='container'>
      <Header  />
-     <AddTask />
+     <AddTask addTask = {addTask} />
      {tasks.length > 0 ? (<Tasks tasks={tasks} onDelete = {deleteTask} onToggle={toggleReminder} />) : "Add some Tasks"}
     </div>
   );
